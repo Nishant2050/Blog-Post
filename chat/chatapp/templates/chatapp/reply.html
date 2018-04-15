@@ -1,0 +1,20 @@
+{% extends 'chatapp/base.html' %}
+
+{% load static %}
+
+
+
+{% block breadcrumb %}
+  <li class="breadcrumb-item"><a href="{% url 'homepage' %}">Country</a></li>
+  <li class="breadcrumb-item"><a href="{% url 'countrylist' place.country1.pk %}">{{ place.country1.name }}</a></li>
+  <li class="breadcrumb-item"><a href="{% url 'place' place.country1.pk place.pk %}">{{ place.place_name }}</a></li>
+  <li class="breadcrumb-item active">Post a reply</li>
+{% endblock %}
+
+{% block content %}
+   <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-success">Post a reply</button>
+  </form>
+{% endblock %}

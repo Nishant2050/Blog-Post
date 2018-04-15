@@ -1,0 +1,47 @@
+{% extends 'chatapp/base.html' %}
+
+{% block breadcrumb %}
+	<li class="breadcrumb-item active">Country</li>
+{% endblock %}
+
+{% block content %}
+<table class="table">
+	<thead class="thead-inverse">
+		<tr>
+			<th>Country</th>
+			<th>VisitingPlaces</th>
+			<th>Posts</th>
+			<th>Last Post</th>
+		</tr>
+	</thead>
+	<tbody>
+		{% for country in countries %}
+			<tr>
+				<td>
+					<a href="{% url 'countrylist' country.pk %}">{{country.name}}<br></a>
+					<small style="color:#888">{{country.description}}</small>
+				</td>
+				<td class="align-middle">
+					{{ country.post_count }}
+				</td>
+				<td class="align-middle">
+					{{ country.vplaces.count }}
+				</td>
+				<td class="align-middle">
+					{% with post=country.last_updated %}
+					  {% if post %}
+						<small>
+							By {{ post.created_by.username }} at {{post.created_at}}
+						</small>
+					  {% else %}
+					    <small class="text-muted">
+							No Posts Yet
+						</small>
+					  {% endif %}	
+					{% endwith %}
+				</td>
+			</tr>
+		{% endfor %}
+	</tbody>
+</table>
+{% endblock %}

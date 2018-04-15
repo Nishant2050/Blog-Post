@@ -1,0 +1,42 @@
+{% extends 'chatapp/base.html' %}
+
+{% block breadcrumb %}
+	<ol class="breadcrumb my-4">
+		<li class="breadcrumb-item"><a href="{% url 'homepage' %}">Country</a></li>
+		<li class="breadcrumb-item active">{{country.name}}</li>
+	</ol>
+{% endblock %}
+
+{% block content %}
+	<div class="mb-4">
+		<a href="{% url 'newplace' country.pk %}" class="btn btn-primary">New Place</a>
+	</div>
+	<table class="table">
+		<thead class="thead-inverse">
+			<tr>
+				<th>Visiting Place</th>
+				<th>Location</th>
+				<th>Starter</th>
+				<th>Replies</th>
+				<th>Views</th>
+				<th>Last Update</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for place in places %}
+				<tr>
+					<td>
+						<a href="{% url 'place' country.pk place.pk %}">
+								{{ place.place_name }}
+						</a>
+					</td>
+					<td>{{ place.location }}</td>
+					<td>{{ place.starter }}</td>
+					<td>{{ place.replies }}</td>
+					<td>{{ place.views }}</td>
+					<td>{{ place.last_updated }}</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+{% endblock %}

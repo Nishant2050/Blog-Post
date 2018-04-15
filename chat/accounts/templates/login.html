@@ -1,0 +1,39 @@
+{% extends 'chatapp/base.html' %}
+
+
+{% block body %}
+  <div class="container">
+    <h1 class="text-center logo my-4">
+      <a href="{% url 'homepage' %}">Love To Travel</a>
+    </h1>
+    <div class="row justify-content-center">
+      <div class="col-lg-4 col-md-6 col-sm-8">
+        <div class="card">
+          <div class="card-body">
+            <h3 class="card-title">Log in</h3>
+	      <!--<form action="/chatapp/auth/" method="post">
+	      	<label for="username">User name:</label>
+              	<input type="text" name="username" value="" id="username"></br></br>
+	      	<label for="password">Password:</label>
+	      	<input type="password" name="password" value="" id="password"></br></br>
+              	<button type="submit" class="btn btn-primary btn-block">Log in</button>
+              </form>-->
+	      <form method="post">
+		{% csrf_token %}
+                {% include 'chatapp/form.html' %}
+                <button type="submit" class="btn btn-primary btn-block">Log in</button>
+              </form>
+          </div>
+          <div class="card-footer text-muted text-center">
+            New to Love To Travel? <a href="{% url 'signup' %}">Sign up</a>
+          </div>
+        </div>
+        <div class="text-center py-2">
+          <small>
+            <a href="#" class="text-muted">Forgot your password?</a>
+          </small>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

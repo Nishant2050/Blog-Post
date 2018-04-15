@@ -1,0 +1,16 @@
+{% for field in form %}
+  <div class="form-group">
+    {{ field.label_tag }} {{ field }}
+    {% if form.is_bound %}
+      {% if field.errors %}
+        {% for error in field.errors %}
+          <div class="invalid-feedback">
+            {{ error }}
+          </div>
+        {% endfor %}
+      {% else %}
+      {% endif %}
+    {% else %}
+    {% endif %}
+  </div>
+{% endfor %}
