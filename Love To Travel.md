@@ -1,4 +1,4 @@
-# Love To Travel 
+# Love To Travel
 An application project built using the Django framework. 
 Where peoples throughout the world could post about their native land or any places that they have visited and wanted to share it with others. 
 This will help the tourist to know more about any visiting places and can also help others to bring on to light about some beautiful  places which had never been visited before.
@@ -62,6 +62,8 @@ Once the reply is posted the user will be directed to the posts page where he ca
 ![image](https://user-images.githubusercontent.com/38308057/39462712-018fb8a8-4d31-11e8-81ea-74db41f62f07.png)
 
 ## last updated in the homepage
+
+Now in homePage the user will be able to see his name, date and time under the Last post column of the eddited country row
 ![image](https://user-images.githubusercontent.com/38308057/39462740-26d9fd12-4d31-11e8-901c-0b07af87b242.png)
 
 
