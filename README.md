@@ -5,3 +5,5 @@ This will help the tourist to know more about any visiting places and can also h
 
 
 ## Home Page
+
+![image](https://user-images.githubusercontent.com/38308057/39462586-3065dd16-4d30-11e8-8a4e-06f60b2fb1e9.png)
